@@ -1,0 +1,14 @@
+<h2 class="text-info"><?= $title ?></h2>
+<div class="row col-12">
+<?php foreach($posts as $post) : ?>
+<div class="col-lg-3-fluid">
+ <div class="card border-info" >
+  	<img src="<?php echo site_url(); ?>assets/images/posts/<?php echo $post['post_image']; ?>" class="card-img-top" alt="...">
+ <div class="card-body">
+ <h5 class="card-title"><?php echo $post['title']; ?></h5>
+ <p class="card-text"><?php echo word_limiter($post['body'], 25); ?></p>
+    <small class="post-date">Posted on: <?php echo $post['created_at']; ?> hastag<strong> <?php echo $post['name']; ?></strong></small>
+    <a href="<?php echo site_url('/posts/'.$post['slug']); ?>" class="btn btn-info">read more</a>
+ </div>
+</div>
+</div>
